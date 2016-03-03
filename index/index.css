@@ -1,0 +1,5 @@
+@import "../common/css/common.css";
+
+.wrap.active{
+    color: red;
+}

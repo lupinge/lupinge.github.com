@@ -1,0 +1,63 @@
+body, ul, ol, li, p, img, h1, h2, h3, h4, h5, h6, input, form, button {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  zoom: 1;
+}
+img{
+  vertical-align: top;
+  border:0;
+}
+a,input{
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+.wrap{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.sm-line {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(top, transparent, transparent 50%, #e5e5e5 50%);
+  background-size: 100% 1px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 1px;
+  border: 0;
+}
+.sm-line.vertical {
+    background-image: -webkit-linear-gradient(left, transparent, transparent 50%, #e5e5e5 50%);
+    background-size: 1px 100%;
+    width: 1px;
+}
+.sm-line.top {
+    background-image: -webkit-linear-gradient(top, #e5e5e5, #e5e5e5 50%, transparent 50%);
+}
+.thin-border{
+    position: relative;
+    border:none;
+}
+.thin-border:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
