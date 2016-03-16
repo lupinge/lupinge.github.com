@@ -3,17 +3,37 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-    <title>采撷网</title>
+    <title>site</title>
     <meta content="" name="keywords">
     <meta content="" name="description">
-    <link rel="stylesheet" type="text/css" href="page/index/index.css"/>
-    <script src="common/js/jquery-1.12.1.min.js"></script>
-    <script src="common/js/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="common/css/common.css"/>
 </head>
 <body>
-    <div class="wrap" id="site">
-
-    </div>
+    <iframe
+        id="content_frame"
+        marginwidth = 0
+        marginheight = 0
+        width = 100%
+        height = 100%
+        src = "page/pc_index/pc_index.html"
+        frameborder = 0 >
+    </iframe>
 </body>
-<script src="page/index/index.js"></script>
+<script>
+    if(!isPC()){
+        document.getElementById('content_frame').src = 'page/m_index/m_index.html';
+    }
+    function isPC(){
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod');
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if(userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+</script>
 </html>

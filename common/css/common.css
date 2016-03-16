@@ -1,4 +1,4 @@
-body, ul, ol, li, p, img, h1, h2, h3, h4, h5, h6, input, form, button {
+body, ul, ol, li, p, img, h1, h2, h3, h4, h5, h6, input, form, button, iframe {
   padding: 0;
   margin: 0;
   list-style: none;
