@@ -1,0 +1,431 @@
+body, ul, ol, li, p, img, h1, h2, h3, h4, h5, h6, input, form, button, iframe {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  zoom: 1;
+}
+img{
+  vertical-align: top;
+  border:0;
+}
+a,input{
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+.sm-line {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(top, transparent, transparent 50%, #e5e5e5 50%);
+  background-size: 100% 1px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 1px;
+  border: 0;
+}
+.sm-line.vertical {
+    background-image: -webkit-linear-gradient(left, transparent, transparent 50%, #e5e5e5 50%);
+    background-size: 1px 100%;
+    width: 1px;
+}
+.sm-line.top {
+    background-image: -webkit-linear-gradient(top, #e5e5e5, #e5e5e5 50%, transparent 50%);
+}
+.sm-line.index{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.c-index, .c-master, .c-product, .c-order{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    display: none;
+}
+.c-index.active, .c-master.active, .c-product.active, .c-order.active{
+    display: block;
+}
+.wrap{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    opacity: 0;
+}
+.contentFadeIn{
+    animation: contentFadeIn 0.1s ease-in 0.3s forwards;
+}
+@keyframes contentFadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.top-tools{
+    width: 100%;
+    height: 44px;
+    overflow: hidden;
+    position: relative;
+}
+.i-logo{
+    width: 22px;
+    height: 22px;
+    margin: 11px 0 0 15px;
+    background: url(../img/logo.png) no-repeat center center;
+    background-size: 22px 22px;
+    float: left;
+}
+.i-slogan{
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    color: #333;
+    float: left;
+    margin-left: 5px;
+}
+.search-box{
+    width: 22px;
+    height: 22px;
+    float: right;
+    margin: 11px 15px 0 0;
+    background: url(../img/i-search.png) no-repeat center center;
+    background-size: 22px 22px;
+}
+.pos-box{
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 20px;
+    top: 12px;
+    left: 0;
+    right: 0;
+    line-height: 22px;
+    font-size: 13px;
+    color: #a9b7b7;
+    text-align: center;
+}
+.pos-box i{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/i-pos.png) no-repeat center center;
+    background-size: 20px 20px;
+    vertical-align: top;
+    margin-right: 3px;
+}
+.sort-box{
+    width: 100%;
+    height: 38px;
+    display: box;
+    display: -webkit-box;
+    overflow: hidden;
+}
+.sort-box li{
+    box-flex:1.0;
+    -webkit-box-flex:1.0;
+    text-align: center;
+    line-height: 38px;
+    color: #333;
+    font-size: 13px;
+}
+.sort-box li i{
+    display: inline-block;
+    height: 4px;
+    width: 4px;
+    border-top: solid 1px #999;
+    border-right: solid 1px #999;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    -webkit-transform-origin: 0 0;
+    margin: 0 0 0 12px;
+}
+.index-list{
+    width: 100%;
+    height: auto;
+}
+.index-list li{
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+.index-list li:active{
+    background-color: #f5f5f5;
+}
+.photo-box{
+    float: left;
+}
+.photo-box img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.master-level{
+    font-size: 12px;
+    color: #999;
+    width: 70px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+.text-box{
+    padding-left: 85px;
+    position: relative;
+}
+.master-name{
+    height: 20px;
+    line-height: 20px;
+    color: #333;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.master-name i{
+    display: inline-block;
+    vertical-align: top;
+    width: 18px;
+    height: 18px;
+    background: url(../img/i-star.png) no-repeat center center;
+    background-size: 18px 18px;
+    margin-right: 4px;
+}
+.master-desc, .master-time{
+    height: 20px;
+    line-height: 20px;
+    color: #999;
+    font-size: 13px;
+    margin-top: 8px;
+}
+.choose-me-btn{
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    border: 1px solid #f95346;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 20px;
+    color: #f95346;
+    font-size: 14px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+}
+.choose-me-btn:active{
+    color: #fff;
+    background-color: #f95346;
+}
+/*美甲师个人主页*/
+.master-msg{
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.master-avatar{
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 5px auto 0;
+    border-radius: 50%;
+}
+.master-name2{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-top: 8px;
+}
+.master-level2, .master-time2{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    margin-top: 4px;
+}
+.master-level2 i{
+    display: inline-block;
+    vertical-align: top;
+    width: 18px;
+    height: 18px;
+    background: url(../img/i-heart.png) no-repeat center center;
+    background-size: 18px 18px;
+    margin-right: 4px;
+}
+.master-tag-box{
+    overflow: hidden;
+    text-align: center;
+    margin-top: 5px;
+}
+.master-tag{
+    overflow: hidden;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 11px;
+    color: #f95346;
+    font-size: 12px;
+    border: 1px solid #f95346;
+    display: inline-block;
+    padding: 0 8px;
+}
+.user-comment-box{
+    overflow: hidden;
+    width: 100%;
+}
+.user-comment-title{
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    height: 30px;
+    line-height: 30px;
+    color: #333;
+    font-size: 14px;
+}
+.user-comment-title i{
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    vertical-align: top;
+    background: url(../img/i-comment.png) no-repeat center center;
+    background-size: 17px 17px;
+    margin-top: 7px;
+    margin-right: 4px;
+}
+.user-comment-title span{
+    color: #999;
+    font-size: 12px;
+}
+.comment-type{
+    width: 100%;
+    height: 36px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.comment-type span{
+    display: inline-block;
+    overflow: hidden;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 11px;
+    color: #999;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 0 7px;
+    margin: 8px 0;
+}
+.star-date{
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    height: 30px;
+}
+.star-date i{
+    display: inline-block;
+    vertical-align: top;
+    width: 14px;
+    height: 14px;
+    background: url(../img/i-c-star.png) no-repeat center center;
+    background-size: 14px 14px;
+    margin-right: 4px;
+    margin-top: 8px;
+}
+.comment-msg{
+    float: right;
+    height: 30px;
+    line-height: 32px;
+    color: #999;
+    font-size: 12px;
+}
+.comment-text{
+    padding: 0 15px;
+    box-sizing: border-box;
+    line-height: 1.5;
+    color: #333;
+    font-size: 15px;
+}
+.comment-img{
+    overflow: hidden;
+    width: 100%;
+    padding: 0 15px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+.comment-img li{
+    width: 22%;
+    height: auto;
+    margin-right: 4%;
+    float: left;
+}
+.comment-img li:nth-child(4n){
+    margin-right: 0;
+}
+.comment-img li img{
+    width: 100%;
+    height: auto;
+}
+.products-box{
+    overflow: hidden;
+    margin-top: 20px;
+}
+.product-list{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.product-list li{
+    width: 48%;
+    height: auto;
+    margin-right: 4%;
+    float: left;
+    margin-top: 15px;
+}
+.product-list li:nth-child(2n){
+    margin-right: 0;
+}
+.product-list li img{
+    width: 100%;
+    height: auto;
+}
+.p-name-price{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    overflow: hidden;
+    margin-top: 6px;
+    color: #333;
+}
+.p-name{
+    float: left;
+    color: #333;
+}
+.p-price{
+    float: right;
+    color: #f95346
+}
+.p-howmany{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    overflow: hidden;
+    margin-top: 6px;
+    color: #999;
+    text-align: right;
+}

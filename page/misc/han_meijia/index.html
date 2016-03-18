@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>美甲网 - 韩程</title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="wrap contentFadeIn" id="site">
+        <!-- 首页美甲师列表 -->
+        <div class="c-index" :class="{active: indexActive}">
+            <div class="top-tools">
+                <div class="i-logo"></div>
+                <div class="i-slogan">美甲网</div>
+                <div class="pos-box"><i></i>北京市海淀区</div>
+                <div class="search-box"></div>
+            </div>
+            <hr class="sm-line">
+            <ul class="sort-box">
+                <li>综合<i></i></li>
+                <li>距离<i></i></li>
+                <li>星级<i></i></li>
+                <li>服务单量<i></i></li>
+            </ul>
+            <hr class="sm-line">
+            <ul class="index-list">
+                <li v-for="master in masters" @click="chooseMaster">
+                    <div class="photo-box">
+                        <img :src="master.avatar">
+                        <div class="master-level">{{ master.level }}</div>
+                    </div>
+                    <div class="text-box">
+                        <div class="master-name"><i></i>{{ master.name }}</div>
+                        <div class="master-desc">{{ master.desc }}</div>
+                        <div class="master-time">服务次数：{{ master.time }}次</div>
+                        <div class="choose-me-btn">选我</div>
+                    </div>
+                    <hr class="sm-line index">
+                </li>
+            </ul>
+        </div>
+        <!-- 首页美甲师列表end -->
+        <!-- 美甲师个人主页 -->
+        <div class="c-master" :class="{active: masterActive}">
+            <div class="master-msg">
+                <img class="master-avatar" src="{{ choosedMaster.avatar }}">
+                <div class="master-name2">{{ choosedMaster.name }}</div>
+                <div class="master-level2"><i></i>{{ choosedMaster.level }}</div>
+                <div class="master-time2">服务次数：{{ choosedMaster.time }}</div>
+                <div class="master-tag-box"><span class="master-tag">{{ choosedMaster.tag }}</span></div>
+            </div>
+            <div class="user-comment-box">
+                <hr class="sm-line">
+                <div class="user-comment-title"><i></i>用户评价 <span>（82人评价）</span></div>
+                <hr class="sm-line">
+                <div class="comment-type">
+                    <span>全部(82)</span>
+                    <span>有图(16)</span>
+                </div>
+                <hr class="sm-line">
+                <div class="comment-show">
+                    <div class="star-date">
+                        <i></i><i></i><i></i><i></i><i></i>
+                        <div class="comment-msg">151****8726(2016-03-18)</div>
+                    </div>
+                    <div class="comment-text">画风很别致~很漂亮，很细致</div>
+                    <ul class="comment-img">
+                        <li v-for="commentImg in commentImgs">
+                            <img :src="commentImg.imgUrl">
+                        </li>
+                    </ul>
+                </div>
+                <div class="products-box">
+                    <hr class="sm-line">
+                    <ul class="sort-box">
+                        <li>颜色<i></i></li>
+                        <li>款式<i></i></li>
+                        <li>风格<i></i></li>
+                        <li>价格<i></i></li>
+                    </ul>
+                    <hr class="sm-line">
+                    <ul class="product-list">
+                        <li v-for="product in products">
+                            <img :src="product.imgUrl">
+                            <div class="p-name-price">
+                                <div class="p-name">{{ product.name }}</div>
+                                <div class="p-price">{{ product.price }}</div>
+                            </div>
+                            <div class="p-howmany">{{ product.howmany }}人做过</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 美甲师个人主页end -->
+        <div class="c-product" :class="{active: productActive}">
+
+        </div>
+        <div class="c-order" :class="{active: orderActive}">
+
+        </div>
+    </div>
+</body>
+<script src="js/index.js"></script>
+</html>
