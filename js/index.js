@@ -11,7 +11,7 @@ var app = new Vue({
         dateMsg: '',
         masters: [
             {
-                name: '呆门girl',
+                name: '哎呦',
                 avatar: '../img/masters/master01.jpg',
                 level: '特级美甲师',
                 desc: '技术很好，很细心~',
