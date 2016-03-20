@@ -13,7 +13,7 @@
 <body>
     <div class="wrap contentFadeIn" id="site">
         <!-- 首页美甲师列表 -->
-        <div class="c-index" :class="{active: indexActive}">
+        <div class="c-index" v-if="indexActive">
             <div class="top-tools">
                 <div class="i-logo"></div>
                 <div class="i-slogan">美甲网</div>
@@ -31,7 +31,7 @@
             <ul class="index-list">
                 <li v-for="master in masters" @click="chooseMaster">
                     <div class="photo-box">
-                        <img :src="master.avatar">
+                        <img v-bind:src="master.avatar">
                         <div class="master-level">{{ master.level }}</div>
                     </div>
                     <div class="text-box">
@@ -46,10 +46,10 @@
         </div>
         <!-- 首页美甲师列表end -->
         <!-- 美甲师个人主页 -->
-        <div class="c-master" :class="{active: masterActive}">
-            <div class="btn-return-index">返回列表</div>
+        <div class="c-master" v-if="masterActive">
+            <div class="btn-return-index" @click="returnList">返回列表</div>
             <div class="master-msg">
-                <img class="master-avatar" src="{{ choosedMaster.avatar }}">
+                <img class="master-avatar" v-bind:src="choosedMaster.avatar">
                 <div class="master-name2">{{ choosedMaster.name }}</div>
                 <div class="master-level2"><i></i>{{ choosedMaster.level }}</div>
                 <div class="master-time2">服务次数：{{ choosedMaster.time }}</div>
@@ -72,7 +72,7 @@
                     <div class="comment-text">画风很别致~很漂亮，很细致</div>
                     <ul class="comment-img">
                         <li v-for="commentImg in commentImgs">
-                            <img :src="commentImg.imgUrl">
+                            <img v-bind:src="commentImg.imgUrl">
                         </li>
                     </ul>
                 </div>
@@ -86,8 +86,8 @@
                     </ul>
                     <hr class="sm-line">
                     <ul class="product-list">
-                        <li v-for="product in products">
-                            <img :src="product.imgUrl">
+                        <li v-for="product in products" @click="chooseProduct">
+                            <img v-bind:src="product.imgUrl">
                             <div class="p-name-price">
                                 <div class="p-name">{{ product.name }}</div>
                                 <div class="p-price">{{ product.price }}</div>
@@ -99,11 +99,74 @@
             </div>
         </div>
         <!-- 美甲师个人主页end -->
-        <div class="c-product" :class="{active: productActive}">
-
+        <!-- 美甲产品 -->
+        <div class="c-product" v-if="productActive">
+            <div class="product-d-title">
+                <div class="i-return-master" @click="returnMaster"></div>
+                {{choosedProduct.name}}
+            </div>
+            <img class="product-b-img" v-bind:src="choosedProduct.imgUrl">
+            <div class="product-d-name">
+                {{choosedProduct.name}}
+                <span>{{choosedProduct.howmany}}人做过</span>
+            </div>
+            <div class="product-d-price">{{choosedProduct.price}}</div>
+            <div class="product-d-others">
+                <span>耗时:{{choosedProduct.spend_time}}分钟, </span>
+                <span>&nbsp保持:{{choosedProduct.keep_time}}天, </span>
+                <span>&nbsp{{choosedProduct.free_service}}</span>
+            </div>
+            <div class="product-handel">
+                <div class="product-d-collect">
+                    <i></i><span>收藏</span>
+                </div>
+                <div class="product-d-order" @click="orderHandel">立即预约</div>
+            </div>
         </div>
-        <div class="c-order" :class="{active: orderActive}">
-
+        <!-- 美甲产品end -->
+        <div class="c-order" v-if="orderActive">
+            <div class="product-d-title">
+                <div class="i-return-master" @click="returnProduct"></div>
+                预约下单 - {{choosedProduct.name}}
+            </div>
+            <div class="order-address">
+                <div class="order-address-title">填写地址</div>
+                <input type="text" placeholder="请填写您的姓名" v-model="nameMsg">
+                <input type="text" placeholder="请填写您的联系方式" v-model="telMsg">
+                <input type="text" placeholder="请填写您的地址" v-model="addressMsg">
+            </div>
+            <hr class="sm-line">
+            <div class="order-product-box">
+                <img v-bind:src="choosedProduct.imgUrl">
+                <div class="order-product-msg">
+                    <div class="order-product-name">{{choosedProduct.name}}</div>
+                    <div class="order-product-spend-time">耗时:{{choosedProduct.spend_time}}分钟</div>
+                    <div class="order-product-price">{{choosedProduct.price}}</div>
+                </div>
+            </div>
+            <hr class="sm-line">
+            <div class="xiejia-box">
+                需要先卸甲
+                <input type="radio" />
+            </div>
+            <hr class="sm-line">
+            <div class="select-date">
+                选择时间:
+                <input type="date" v-model="dateMsg"/>
+            </div>
+            <hr class="sm-line">
+            <div class="select-master">
+                <div class="photo-box">
+                    <img v-bind:src="choosedMaster.avatar">
+                    <div class="master-level">{{ choosedMaster.level }}</div>
+                </div>
+                <div class="text-box">
+                    <div class="master-name">{{ choosedMaster.name }}</div>
+                    <div class="master-tip">若当前美甲师不能服务，接受其他人 <input type="radio" /></div>
+                </div>
+            </div>
+            <hr class="sm-line">
+            <div class="sub-order" @click="subHandel">提交订单</div>
         </div>
     </div>
 </body>

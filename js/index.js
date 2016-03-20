@@ -5,6 +5,10 @@ var app = new Vue({
         masterActive: false,
         productActive: false,
         orderActive: false,
+        nameMsg: '',
+        telMsg: '',
+        addressMsg: '',
+        dateMsg: '',
         masters: [
             {
                 name: '呆门girl',
@@ -67,27 +71,40 @@ var app = new Vue({
                 imgUrl: '../img/products/1.jpg',
                 name: '梦幻午茶会',
                 price: '￥139',
-                howmany: '35'
+                howmany: 35,
+                spend_time: 120,
+                keep_time: 30,
+                free_service: '免费修手及甲油胶卸甲'
             },
             {
                 imgUrl: '../img/products/2.jpg',
                 name: '炫彩紫枫',
                 price: '￥189',
-                howmany: '86'
+                howmany: 35,
+                spend_time: 120,
+                keep_time: 30,
+                free_service: '免费修手及甲油胶卸甲'
             },
             {
                 imgUrl: '../img/products/3.jpg',
                 name: '情深阿拉斯',
                 price: '￥139',
-                howmany: '35'
+                howmany: 35,
+                spend_time: 120,
+                keep_time: 30,
+                free_service: '免费修手及甲油胶卸甲'
             },
             {
                 imgUrl: '../img/products/4.jpg',
                 name: '迷情按开机',
                 price: '￥189',
-                howmany: '86'
+                howmany: 35,
+                spend_time: 120,
+                keep_time: 30,
+                free_service: '免费修手及甲油胶卸甲'
             }
-        ]
+        ],
+        choosedProduct: {}
     },
     methods: {
         chooseMaster: function(e){
@@ -95,6 +112,55 @@ var app = new Vue({
             this.choosedMaster = this.masters[index];
             this.indexActive = false;
             this.masterActive = true;
+            $('html,body').animate({scrollTop: '0px'}, 0);
+        },
+        returnList: function(){
+            this.indexActive = true;
+            this.masterActive = false;
+            $('html,body').animate({scrollTop: '0px'}, 0);
+        },
+        chooseProduct: function(e){
+            var index = $(e.currentTarget).index();
+            this.choosedProduct = this.products[index];
+            this.masterActive = false;
+            this.productActive = true;
+            $('html,body').animate({scrollTop: '0px'}, 0);
+        },
+        returnMaster: function(){
+            this.productActive = false;
+            this.masterActive = true;
+            $('html,body').animate({scrollTop: '0px'}, 0);
+        },
+        orderHandel: function(){
+            this.productActive = false;
+            this.orderActive = true;
+            $('html,body').animate({scrollTop: '0px'}, 0);
+        },
+        returnProduct: function(){
+            this.orderActive = false;
+            this.productActive = true;
+            $('html,body').animate({scrollTop: '0px'}, 0);
+        },
+        subHandel: function(){
+            if(this.nameMsg === ''){
+                window.alert('请填写姓名~');
+                return;
+            }
+            if(this.telMsg === ''){
+                window.alert('请填写联系方式~');
+                return;
+            }
+            if(this.addressMsg === ''){
+                window.alert('请填写地址~');
+                return;
+            }
+            if(this.dateMsg === ''){
+                window.alert('请填写预约时间~');
+                return;
+            }
+            window.alert('您的订单提交成功~');
+            this.orderActive = false;
+            this.indexActive = true;
             $('html,body').animate({scrollTop: '0px'}, 0);
         }
     },
