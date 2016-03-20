@@ -685,7 +685,46 @@ a,input["text"]{
     background-color: #f95346;
     border-radius: 8px;
     margin: 20px auto 0;
+    margin-bottom: 20px;
 }
 .sub-order:active{
+    background-color: red;
+}
+.sub-success-mask{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1020;
+}
+.mask-c{
+    width: 90%;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 150px auto 0;
+    overflow: hidden;
+}
+.mask-tip{
+    width: 95%;
+    line-height: 1.5;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 25px;
+}
+.btn-confirm{
+    width: 40%;
+    height: 35px;
+    background-color: #f95346;
+    color: #fff;
+    margin: 20px auto 0;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 6px;
+}
+.btn-confirm:active{
     background-color: red;
 }

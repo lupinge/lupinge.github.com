@@ -5,10 +5,14 @@ var app = new Vue({
         masterActive: false,
         productActive: false,
         orderActive: false,
+        maskActive: false,
         nameMsg: '',
         telMsg: '',
         addressMsg: '',
         dateMsg: '',
+        timeMsg: '',
+        //masters是美甲师的信息
+        //name:头像，avatar:头像，level:等级，desc:简介，time:服务次数，tag:标签
         masters: [
             {
                 name: '哎呦',
@@ -52,6 +56,7 @@ var app = new Vue({
             }
         ],
         choosedMaster: {},
+        //commentImgs是评论区域的图片，因为是不变的，所以只写地址
         commentImgs: [
             {
                 imgUrl: '../img/comment/1.jpg'
@@ -66,6 +71,8 @@ var app = new Vue({
                 imgUrl: '../img/comment/4.jpg'
             }
         ],
+        //products是所有的产品，每个美甲师下都是一样的
+        //imgUrl:产品图片，name:产品名称，price:价格，howmany:多少人做过，spend_time:花费时间，keep_time:保持时间，free_service:免费服务
         products: [
             {
                 imgUrl: '../img/products/1.jpg',
@@ -155,10 +162,17 @@ var app = new Vue({
                 return;
             }
             if(this.dateMsg === ''){
+                window.alert('请填写预约日期~');
+                return;
+            }
+            if(this.timeMsg === ''){
                 window.alert('请填写预约时间~');
                 return;
             }
-            window.alert('您的订单提交成功~');
+            this.maskActive = true;
+        },
+        maskConfirm: function(){
+            this.maskActive = false;
             this.orderActive = false;
             this.indexActive = true;
             $('html,body').animate({scrollTop: '0px'}, 0);

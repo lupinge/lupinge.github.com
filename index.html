@@ -125,6 +125,12 @@
         </div>
         <!-- 美甲产品end -->
         <div class="c-order" v-if="orderActive">
+            <div class="sub-success-mask" v-if="maskActive">
+                <div class="mask-c">
+                    <div class="mask-tip">订单已提交~<br>正在安排美甲师，稍后将短信通知~</div>
+                    <div class="btn-confirm" @click="maskConfirm">知道了</div>
+                </div>
+            </div>
             <div class="product-d-title">
                 <div class="i-return-master" @click="returnProduct"></div>
                 预约下单 - {{choosedProduct.name}}
@@ -152,7 +158,8 @@
             <hr class="sm-line">
             <div class="select-date">
                 选择时间:
-                <input type="date" v-model="dateMsg"/>
+                <input type="date" v-model="dateMsg" />
+                <input type="time" v-model="timeMsg" />
             </div>
             <hr class="sm-line">
             <div class="select-master">
