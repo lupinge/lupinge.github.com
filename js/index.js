@@ -16,7 +16,7 @@ var app = new Vue({
         masters: [
             {
                 name: '哎呦',
-                avatar: '../img/masters/master01.jpg',
+                avatar: 'img/masters/master01.jpg',
                 level: '特级美甲师',
                 desc: '技术很好，很细心~',
                 time: 99,
@@ -24,7 +24,7 @@ var app = new Vue({
             },
             {
                 name: '沉嘎嘎',
-                avatar: '../img/masters/master02.jpg',
+                avatar: 'img/masters/master02.jpg',
                 level: '优秀美甲师',
                 desc: 'nice，温柔',
                 time: 14,
@@ -32,7 +32,7 @@ var app = new Vue({
             },
             {
                 name: '小米子',
-                avatar: '../img/masters/master03.jpg',
+                avatar: 'img/masters/master03.jpg',
                 level: '优秀美甲师',
                 desc: 'nice，温柔',
                 time: 45,
@@ -40,7 +40,7 @@ var app = new Vue({
             },
             {
                 name: '夏天',
-                avatar: '../img/masters/master04.jpg',
+                avatar: 'img/masters/master04.jpg',
                 level: '优秀美甲师',
                 desc: 'nice，温柔',
                 time: 26,
@@ -48,7 +48,7 @@ var app = new Vue({
             },
             {
                 name: '污污球',
-                avatar: '../img/masters/master05.jpg',
+                avatar: 'img/masters/master05.jpg',
                 level: '优秀美甲师',
                 desc: 'nice，温柔',
                 time: 33,
@@ -59,23 +59,23 @@ var app = new Vue({
         //commentImgs是评论区域的图片，因为是不变的，所以只写地址
         commentImgs: [
             {
-                imgUrl: '../img/comment/1.jpg'
+                imgUrl: 'img/comment/01.jpg'
             },
             {
-                imgUrl: '../img/comment/2.jpg'
+                imgUrl: 'img/comment/02.jpg'
             },
             {
-                imgUrl: '../img/comment/3.jpg'
+                imgUrl: 'img/comment/03.jpg'
             },
             {
-                imgUrl: '../img/comment/4.jpg'
+                imgUrl: 'img/comment/04.jpg'
             }
         ],
         //products是所有的产品，每个美甲师下都是一样的
         //imgUrl:产品图片，name:产品名称，price:价格，howmany:多少人做过，spend_time:花费时间，keep_time:保持时间，free_service:免费服务
         products: [
             {
-                imgUrl: '../img/products/1.jpg',
+                imgUrl: 'img/products/01.jpg',
                 name: '梦幻午茶会',
                 price: '￥139',
                 howmany: 35,
@@ -84,7 +84,7 @@ var app = new Vue({
                 free_service: '免费修手及甲油胶卸甲'
             },
             {
-                imgUrl: '../img/products/2.jpg',
+                imgUrl: 'img/products/02.jpg',
                 name: '炫彩紫枫',
                 price: '￥189',
                 howmany: 35,
@@ -93,7 +93,7 @@ var app = new Vue({
                 free_service: '免费修手及甲油胶卸甲'
             },
             {
-                imgUrl: '../img/products/3.jpg',
+                imgUrl: 'img/products/03.jpg',
                 name: '情深阿拉斯',
                 price: '￥139',
                 howmany: 35,
@@ -102,7 +102,7 @@ var app = new Vue({
                 free_service: '免费修手及甲油胶卸甲'
             },
             {
-                imgUrl: '../img/products/4.jpg',
+                imgUrl: 'img/products/04.jpg',
                 name: '迷情按开机',
                 price: '￥189',
                 howmany: 35,
